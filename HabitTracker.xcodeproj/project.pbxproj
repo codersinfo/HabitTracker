@@ -11,6 +11,19 @@
 		202AF5412AC5C34D009E75C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AF5402AC5C34D009E75C8 /* ContentView.swift */; };
 		202AF5432AC5C34E009E75C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202AF5422AC5C34E009E75C8 /* Assets.xcassets */; };
 		202AF5462AC5C34E009E75C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202AF5452AC5C34E009E75C8 /* Preview Assets.xcassets */; };
+		202AF5582AC5C5C6009E75C8 /* AddNewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AF5572AC5C5C5009E75C8 /* AddNewHabitView.swift */; };
+		203780D12ACC0E6E005C2F33 /* WeekDayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203780D02ACC0E6E005C2F33 /* WeekDayEntity.swift */; };
+		203780D42ACC3EDF005C2F33 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203780D32ACC3EDF005C2F33 /* Enums.swift */; };
+		204437752ACD25EE00AFD650 /* FrequencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204437742ACD25ED00AFD650 /* FrequencyView.swift */; };
+		204437782ACD3A6300AFD650 /* RepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204437772ACD3A6300AFD650 /* RepeatView.swift */; };
+		2044377A2ACD91B100AFD650 /* TimeRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204437792ACD91B100AFD650 /* TimeRangeView.swift */; };
+		2044377F2ACDA08200AFD650 /* RemainderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2044377E2ACDA08200AFD650 /* RemainderView.swift */; };
+		207E7B8C2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 207E7B8A2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld */; };
+		207E7B8F2AC5ED4D008CD6FD /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E7B8E2AC5ED4D008CD6FD /* PersistenceController.swift */; };
+		20B7356D2AC876E20086E6FF /* AddNewHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7356C2AC876E20086E6FF /* AddNewHabitViewModel.swift */; };
+		20B7356F2ACBD0E60086E6FF /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7356E2ACBD0E60086E6FF /* HabitListView.swift */; };
+		20B735712ACBDA6C0086E6FF /* HabitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B735702ACBDA6C0086E6FF /* HabitEntity.swift */; };
+		20CE68292ACE93C00064060E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE68282ACE93C00064060E /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +32,19 @@
 		202AF5402AC5C34D009E75C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		202AF5422AC5C34E009E75C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		202AF5452AC5C34E009E75C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		202AF5572AC5C5C5009E75C8 /* AddNewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabitView.swift; sourceTree = "<group>"; };
+		203780D02ACC0E6E005C2F33 /* WeekDayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayEntity.swift; sourceTree = "<group>"; };
+		203780D32ACC3EDF005C2F33 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		204437742ACD25ED00AFD650 /* FrequencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyView.swift; sourceTree = "<group>"; };
+		204437772ACD3A6300AFD650 /* RepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatView.swift; sourceTree = "<group>"; };
+		204437792ACD91B100AFD650 /* TimeRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeView.swift; sourceTree = "<group>"; };
+		2044377E2ACDA08200AFD650 /* RemainderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainderView.swift; sourceTree = "<group>"; };
+		207E7B8B2AC5ED18008CD6FD /* HabitContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitContainer.xcdatamodel; sourceTree = "<group>"; };
+		207E7B8E2AC5ED4D008CD6FD /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		20B7356C2AC876E20086E6FF /* AddNewHabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabitViewModel.swift; sourceTree = "<group>"; };
+		20B7356E2ACBD0E60086E6FF /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
+		20B735702ACBDA6C0086E6FF /* HabitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEntity.swift; sourceTree = "<group>"; };
+		20CE68282ACE93C00064060E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +77,13 @@
 		202AF53D2AC5C34D009E75C8 /* HabitTracker */ = {
 			isa = PBXGroup;
 			children = (
-				202AF53E2AC5C34D009E75C8 /* HabitTrackerApp.swift */,
+				202AF5562AC5C47B009E75C8 /* CustomControls */,
+				202AF5522AC5C420009E75C8 /* App */,
+				202AF54C2AC5C394009E75C8 /* Resources */,
+				202AF54E2AC5C3A6009E75C8 /* Utilities */,
+				202AF54D2AC5C3A0009E75C8 /* Models */,
+				202AF54F2AC5C3B2009E75C8 /* Core */,
 				202AF5402AC5C34D009E75C8 /* ContentView.swift */,
-				202AF5422AC5C34E009E75C8 /* Assets.xcassets */,
 				202AF5442AC5C34E009E75C8 /* Preview Content */,
 			);
 			path = HabitTracker;
@@ -65,6 +95,143 @@
 				202AF5452AC5C34E009E75C8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		202AF54C2AC5C394009E75C8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				202AF5422AC5C34E009E75C8 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		202AF54D2AC5C3A0009E75C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				207E7B8A2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld */,
+				203780D02ACC0E6E005C2F33 /* WeekDayEntity.swift */,
+				20B735702ACBDA6C0086E6FF /* HabitEntity.swift */,
+				203780D32ACC3EDF005C2F33 /* Enums.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		202AF54E2AC5C3A6009E75C8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				207E7B8D2AC5ED36008CD6FD /* Providers */,
+				202AF5552AC5C44F009E75C8 /* Styles */,
+				202AF5542AC5C448009E75C8 /* Extension */,
+				202AF5532AC5C443009E75C8 /* Managers */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		202AF54F2AC5C3B2009E75C8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2044377B2ACD94BE00AFD650 /* ViewModel */,
+				2044377D2ACD950600AFD650 /* Views */,
+				2044377C2ACD94C700AFD650 /* Common */,
+				202AF5512AC5C3C0009E75C8 /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		202AF5502AC5C3BB009E75C8 /* Habit */ = {
+			isa = PBXGroup;
+			children = (
+				20B7356E2ACBD0E60086E6FF /* HabitListView.swift */,
+				202AF5572AC5C5C5009E75C8 /* AddNewHabitView.swift */,
+				204437762ACD328600AFD650 /* SubViews */,
+			);
+			path = Habit;
+			sourceTree = "<group>";
+		};
+		202AF5512AC5C3C0009E75C8 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		202AF5522AC5C420009E75C8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				202AF53E2AC5C34D009E75C8 /* HabitTrackerApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		202AF5532AC5C443009E75C8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				20CE68282ACE93C00064060E /* NotificationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		202AF5542AC5C448009E75C8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		202AF5552AC5C44F009E75C8 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		202AF5562AC5C47B009E75C8 /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomControls;
+			sourceTree = "<group>";
+		};
+		204437762ACD328600AFD650 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				204437742ACD25ED00AFD650 /* FrequencyView.swift */,
+				204437772ACD3A6300AFD650 /* RepeatView.swift */,
+				204437792ACD91B100AFD650 /* TimeRangeView.swift */,
+				2044377E2ACDA08200AFD650 /* RemainderView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		2044377B2ACD94BE00AFD650 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				20B7356C2AC876E20086E6FF /* AddNewHabitViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2044377C2ACD94C700AFD650 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2044377D2ACD950600AFD650 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				202AF5502AC5C3BB009E75C8 /* Habit */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		207E7B8D2AC5ED36008CD6FD /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				207E7B8E2AC5ED4D008CD6FD /* PersistenceController.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +304,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				204437752ACD25EE00AFD650 /* FrequencyView.swift in Sources */,
+				20B7356D2AC876E20086E6FF /* AddNewHabitViewModel.swift in Sources */,
+				20B735712ACBDA6C0086E6FF /* HabitEntity.swift in Sources */,
+				204437782ACD3A6300AFD650 /* RepeatView.swift in Sources */,
+				2044377A2ACD91B100AFD650 /* TimeRangeView.swift in Sources */,
+				203780D42ACC3EDF005C2F33 /* Enums.swift in Sources */,
+				203780D12ACC0E6E005C2F33 /* WeekDayEntity.swift in Sources */,
+				202AF5582AC5C5C6009E75C8 /* AddNewHabitView.swift in Sources */,
+				2044377F2ACDA08200AFD650 /* RemainderView.swift in Sources */,
 				202AF5412AC5C34D009E75C8 /* ContentView.swift in Sources */,
+				207E7B8C2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld in Sources */,
 				202AF53F2AC5C34D009E75C8 /* HabitTrackerApp.swift in Sources */,
+				20CE68292ACE93C00064060E /* NotificationManager.swift in Sources */,
+				207E7B8F2AC5ED4D008CD6FD /* PersistenceController.swift in Sources */,
+				20B7356F2ACBD0E60086E6FF /* HabitListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +524,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		207E7B8A2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				207E7B8B2AC5ED18008CD6FD /* HabitContainer.xcdatamodel */,
+			);
+			currentVersion = 207E7B8B2AC5ED18008CD6FD /* HabitContainer.xcdatamodel */;
+			path = HabitContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 202AF5332AC5C34C009E75C8 /* Project object */;
 }
