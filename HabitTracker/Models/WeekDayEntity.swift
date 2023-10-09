@@ -33,3 +33,8 @@ extension WeekDayEntity {
         return request
     }
 }
+
+
+extension WeekDayEntity {
+    
+}

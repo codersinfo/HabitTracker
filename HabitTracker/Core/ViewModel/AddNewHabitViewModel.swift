@@ -32,7 +32,7 @@ class AddNewHabitViewModel {
     
     private let context: NSManagedObjectContext
     private let calendar = Calendar.current
-
+    
     init(context: PersistenceController, habit: HabitEntity? = nil) {
         self.context = context.newViewContext
         self.habit = HabitEntity(context: self.context)
@@ -63,13 +63,17 @@ class AddNewHabitViewModel {
                 habit.remainderText = remainderText
                 habit.notificationTime = remainderDate
                 
-                if let weekEntities = try? await scheduleNotificationWeekday() {
-                    //habit.weekDays = weekDays
-                   // habit.weekDays?.addingObjects(from: weekEntities)
-                    habit.weekDays = Set(weekEntities) as NSSet
+                if frequency == .weekly {
+                    if let weekEntities = try? await scheduleNotificationWeekday() {
+                        //habit.weekDays = weekDays
+                        //habit.weekDays?.addingObjects(from: weekEntities)
+                        habit.weekDays = Set(weekEntities) as NSSet
+                    }
+                } else if frequency == .monthly {
+                    
+                } else {
+                    try await scheduleNotificationEveryDay()
                 }
-                
-               // scheduleNotification()
             }
         }
         
@@ -80,7 +84,8 @@ class AddNewHabitViewModel {
     }
     
     //Handle all the notifications
-    private func scheduleNotification() async throws -> Bool {
+    @discardableResult
+    private func scheduleNotificationEveryDay() async throws -> Bool {
         let dateComponents = getNotificationDateComponents()
         let id = UUID().uuidString
         
@@ -96,7 +101,7 @@ class AddNewHabitViewModel {
         var dateComponents = DateComponents()
         dateComponents.hour = calendar.component(.hour, from: remainderDate)
         dateComponents.minute = calendar.component(.minute, from: remainderDate)
-
+        
         return dateComponents
     }
     

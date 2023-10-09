@@ -9,64 +9,111 @@ import SwiftUI
 
 struct HabitListView: View {
     @State var showAddNewHabitView: Bool = false
-    @FetchRequest(fetchRequest: HabitEntity.all()) private var habits
+   // @FetchRequest(fetchRequest: HabitEntity.all()) private var habits
+    @State var listVm = HabitListViewModel()
+    @Namespace var weeklyViewNameSpace
     
     var provider = PersistenceController.shared
     
     var body: some View {
         NavigationStack {
-            ScrollView {
-                ForEach(habits) { habit in
-                    VStack {
-                        Text("\(habit.id)")
-                        HStack {
-                            Text(habit.name)
-                            Spacer()
-                            Capsule()
-                                .fill(Color(habit.color))
-                                .frame(width: 70, height: 50)
+            VStack(spacing: 14) {
+                //MARK: Weekly calendar fview
+                HStack {
+                    ForEach(listVm.currentWeek, id:\.self) { day in
+                        VStack(spacing: 12) {
+                            Text(day.getDay(format: "EE"))
+                            Text(day.getDay(format: "d"))
                         }
-                        
-//                        HStack {
-//                            ForEach(habit.weekdayArray) { weekDay in
-//                                Text(weekDay.day ?? "")
-//                            }
-//                        }
-                        
-                        WeekView(habit: habit)
+                        .foregroundStyle(listVm.isToday(date: day) ? .white : .black)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .background(
+                            ZStack {
+                                if listVm.isToday(date: day) {
+                                    Capsule()
+                                        .fill(Color.indigo)
+                                        .matchedGeometryEffect(id: "week", in: weeklyViewNameSpace)
+                                }
+                            }
+                        )
+                        .onTapGesture {
+                            withAnimation {
+                                listVm.currentDate = day
+                            }
+                        }
                     }
                 }
-            }
-            .toolbar(content: {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: {
-                        showAddNewHabitView.toggle()
-                    }, label: {
-                        Text("Add")
-                    })
-                }
-            })
-//            .onAppear {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-//                    print(habits)
+                
+                FilteredHabitsView(dateToFilter: listVm.currentDate)
+                
+//                ScrollView {
+//                    VStack(spacing: 14) {
+//                        ForEach(habits) { habit in
+//                            VStack {
+//    //                            Text("\(habit.id)")
+//    //                            HStack {
+//    //                                Text(habit.name)
+//    //                                Spacer()
+//    //                                Capsule()
+//    //                                    .fill(Color(habit.color))
+//    //                                    .frame(width: 70, height: 50)
+//    //                            }
+//                                
+//                                ProgressBar(text: habit.name, value: .constant(0.4), color: Color(habit.color))
+//                                    .frame(height: 60)
+//                                
+//                                //                        HStack {
+//                                //                            ForEach(habit.weekdayArray) { weekDay in
+//                                //                                Text(weekDay.day ?? "")
+//                                //                            }
+//                                //                        }
+//                                
+//
+//                            }
+//                        }
+//                    }
 //                }
-//            }
-            .sheet(isPresented: $showAddNewHabitView, content: {
-                NavigationStack {
-                    AddNewHabitView(addVm: .init(context: provider))
-                }
-            })
+                .toolbar(content: {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button(action: {
+                            showAddNewHabitView.toggle()
+                        }, label: {
+                            Text("Add")
+                        })
+                    }
+                })
+                //            .onAppear {
+                //                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                //                    print(habits)
+                //                }
+                //            }
+                .sheet(isPresented: $showAddNewHabitView, content: {
+                    NavigationStack {
+                        AddNewHabitView(addVm: .init(context: provider))
+                    }
+                })
+            }
+            .padding()
+            .navigationTitle("Habits")
         }
     }
 }
 
 #Preview {
-    HabitListView()
+    Group {
+        let preview = PersistenceController.shared
+        HabitListView(provider: preview)
+            .environment(\.managedObjectContext, preview.viewContext)
+            .onAppear {
+                HabitEntity.makePreview(count: 5, in: preview.viewContext )
+            }
+    }
 }
 
 
 struct WeekView: View {
-    @FetchRequest(sortDescriptors: []) private var weekDays: FetchedResults<WeekDayEntity>
+    @FetchRequest private var weekDays: FetchedResults<WeekDayEntity>
     
     init(habit: HabitEntity) {
         _weekDays = FetchRequest(fetchRequest: WeekDayEntity.all(myhabit: habit))

@@ -53,7 +53,7 @@ struct AddNewHabitView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        Task{
+                        Task {
                             do {
                                 try await addVm.save()
                                 dismiss()
@@ -80,7 +80,9 @@ struct AddNewHabitView: View {
 
 #Preview {
     NavigationStack {
-        AddNewHabitView(addVm: .init(context: .shared))
+        let preview = PersistenceController.shared
+        AddNewHabitView(addVm: .init(context: preview))
+            .environment(\.managedObjectContext, preview.viewContext)
     }
 }
 
@@ -134,6 +136,7 @@ extension AddNewHabitView {
             //                    .font(.footnote)
             //                    .foregroundStyle(.gray)
             //            }
+            
             if addVm.hasGoalSet {
                 HStack(spacing: 14) {
                     TextField("30", text: $addVm.note)
