@@ -55,7 +55,7 @@ struct AddNewHabitView: View {
                     Button(action: {
                         Task {
                             do {
-                                try await addVm.save()
+                                try await addVm.addNewHabitForDaily()
                                 dismiss()
                             } catch {
                                 print("Error \(error)")
@@ -211,13 +211,21 @@ extension AddNewHabitView {
             Text("Habit period")
                 .bold()
             
-            DatePicker(selection: .constant(.now), displayedComponents: .date) {
+            DatePicker(selection: $addVm.startDate, displayedComponents: .date) {
                 Text("Start date")
             }
             // .datePickerStyle(GraphicalDatePickerStyle())
             
-            DatePicker(selection: .constant(.now), displayedComponents: .date) {
+            Toggle(isOn: $addVm.hasEndDateEnabled) {
                 Text("End date")
+                    .bold()
+            }
+            
+            if addVm.hasEndDateEnabled {
+//                DatePicker(selection: .constant(.now), displayedComponents: .date) {
+//                    Text("End date")
+//                }
+                DatePicker("", selection: $addVm.endDate, displayedComponents: .date)
             }
         }
     }

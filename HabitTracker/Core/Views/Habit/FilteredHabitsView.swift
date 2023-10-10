@@ -36,13 +36,13 @@ struct FilteredHabitsView: View {
                 }
             }
         }
-//        .onAppear(perform: {
+        .onAppear(perform: {
 //            print(Date.yesterday)
 //            print(Date.tomorrow)
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-//                print(request)
-//            }
-//        })
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                print(request)
+            }
+        })
     }
 }
 
