@@ -78,7 +78,7 @@ extension HabitEntity {
         ///Showing already exist data with no end date but Start date should be not NULL.
         ///Showing already exist data till selected date less than End date.
         let dailyQuery = """
-        frequency == [c] %@ AND (
+        frequency == [c] %@ AND ( 
         (startDate >= %@ AND startDate < %@) OR
         (startDate <= %@ AND (startDate != nil AND endDate == nil)) OR
         (endDate != nil AND startDate <= %@ AND endDate >= %@))
@@ -89,14 +89,16 @@ extension HabitEntity {
         ///Start date should be greater than or equal given date.
         ///End date can be less than or equal given date OR can be null too.
         let weeklyDataQuery = """
-        frequency == [c] %@ AND ANY weekDays.day == [c] %@ AND
-        (startDate <= %@ AND endDate >= %@ OR startDate != nil AND endDate == nil)
+        frequency == [c] %@ AND ANY weekDays.day == [c] %@ AND (
+        (startDate >= %@ AND startDate < %@) OR
+        (startDate <= %@ AND endDate >= %@) OR 
+        (startDate != nil AND endDate == nil))
         """
         
         //MARK: predicates
         let dailyPredicate = NSPredicate(format: dailyQuery, argumentArray: ["Daily", startOfDay as NSDate, endOfDay as NSDate, targetDate as NSDate, targetDate as NSDate, targetDate as NSDate])
         
-        let weeklyPredicate = NSPredicate(format: weeklyDataQuery, argumentArray: ["Weekly", weekDay, targetDate as NSDate, targetDate as NSDate])
+        let weeklyPredicate = NSPredicate(format: weeklyDataQuery, argumentArray: ["Weekly", weekDay, startOfDay as NSDate, endOfDay as NSDate, targetDate as NSDate, targetDate as NSDate])
         
         request.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [dailyPredicate, weeklyPredicate])
         return request

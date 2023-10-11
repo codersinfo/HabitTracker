@@ -23,107 +23,108 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "589A9ECA-ED5D-4D07-BCBF-27E55CA4C330"
+            uuid = "53E4155E-1166-4F05-8C95-FD730F8DE022"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "addNewHabitForDaily()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42D2ED89-D57C-4ECA-9540-51847F86B4C9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "scheduleNotifcationWithEndDate()"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "scheduleNotificationWeekday()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "589A9ECA-ED5D-4D07-BCBF-27E55CA4C330 - e96087d8876e3797"
+                  uuid = "42D2ED89-D57C-4ECA-9540-51847F86B4C9 - 4b9f38a822bcb212"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotifcationWithEndDate() -&gt; ()"
+                  symbolName = "(1) suspend resume partial function for HabitTracker.AddNewHabitViewModel.scheduleNotificationWeekday() async throws -&gt; ()"
                   moduleName = "HabitTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
-                  offsetFromSymbolStart = "509">
+                  startingLineNumber = "271"
+                  endingLineNumber = "271"
+                  offsetFromSymbolStart = "289">
                </Location>
                <Location
-                  uuid = "589A9ECA-ED5D-4D07-BCBF-27E55CA4C330 - e96087d8876e3797"
+                  uuid = "42D2ED89-D57C-4ECA-9540-51847F86B4C9 - 4b9f38a822bcb212"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotifcationWithEndDate() -&gt; ()"
+                  symbolName = "(1) suspend resume partial function for HabitTracker.AddNewHabitViewModel.scheduleNotificationWeekday() async throws -&gt; ()"
                   moduleName = "HabitTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
-                  offsetFromSymbolStart = "597">
+                  startingLineNumber = "271"
+                  endingLineNumber = "271"
+                  offsetFromSymbolStart = "400">
                </Location>
                <Location
-                  uuid = "589A9ECA-ED5D-4D07-BCBF-27E55CA4C330 - 8658ee2e22b9eb1f"
+                  uuid = "42D2ED89-D57C-4ECA-9540-51847F86B4C9 - 189b3833f9578bca"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for HabitTracker.AddNewHabitViewModel.scheduleNotifcationWithEndDate() async throws -&gt; ()"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeekday() -&gt; ()"
                   moduleName = "HabitTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
-                  offsetFromSymbolStart = "254">
+                  startingLineNumber = "271"
+                  endingLineNumber = "271"
+                  offsetFromSymbolStart = "341">
                </Location>
                <Location
-                  uuid = "589A9ECA-ED5D-4D07-BCBF-27E55CA4C330 - 8658ee2e22b9eb1f"
+                  uuid = "42D2ED89-D57C-4ECA-9540-51847F86B4C9 - 189b3833f9578bca"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for HabitTracker.AddNewHabitViewModel.scheduleNotifcationWithEndDate() async throws -&gt; ()"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeekday() -&gt; ()"
                   moduleName = "HabitTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
-                  offsetFromSymbolStart = "310">
+                  startingLineNumber = "271"
+                  endingLineNumber = "271"
+                  offsetFromSymbolStart = "337">
                </Location>
                <Location
-                  uuid = "589A9ECA-ED5D-4D07-BCBF-27E55CA4C330 - 8658ee2e22b9eb1f"
+                  uuid = "42D2ED89-D57C-4ECA-9540-51847F86B4C9 - 189b3833f9578b56"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for HabitTracker.AddNewHabitViewModel.scheduleNotifcationWithEndDate() async throws -&gt; ()"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeekday() -&gt; ()"
                   moduleName = "HabitTracker"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
-                  offsetFromSymbolStart = "327">
-               </Location>
-               <Location
-                  uuid = "589A9ECA-ED5D-4D07-BCBF-27E55CA4C330 - 8658ee2e22b9eb1f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for HabitTracker.AddNewHabitViewModel.scheduleNotifcationWithEndDate() async throws -&gt; ()"
-                  moduleName = "HabitTracker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193"
-                  offsetFromSymbolStart = "344">
+                  startingLineNumber = "275"
+                  endingLineNumber = "275"
+                  offsetFromSymbolStart = "337">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -131,17 +132,403 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0C04E915-A9FF-470A-9292-E794C67574A0"
+            uuid = "D276161C-823A-48E3-BABE-9C224C99D7C7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "addNewHabitForDaily()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D276161C-823A-48E3-BABE-9C224C99D7C7 - 1c05257aef9fcb64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for HabitTracker.AddNewHabitViewModel.addNewHabitForDaily() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "4488">
+               </Location>
+               <Location
+                  uuid = "D276161C-823A-48E3-BABE-9C224C99D7C7 - 375381bc506e9766"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for HabitTracker.AddNewHabitViewModel.addNewHabitForDaily() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "624">
+               </Location>
+               <Location
+                  uuid = "D276161C-823A-48E3-BABE-9C224C99D7C7 - cfaa6cfd9a3c5360"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for HabitTracker.AddNewHabitViewModel.addNewHabitForDaily() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "624">
+               </Location>
+               <Location
+                  uuid = "D276161C-823A-48E3-BABE-9C224C99D7C7 - e680d73fcc031f62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for HabitTracker.AddNewHabitViewModel.addNewHabitForDaily() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "624">
+               </Location>
+               <Location
+                  uuid = "D276161C-823A-48E3-BABE-9C224C99D7C7 - 1c05257aef9fcb64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for HabitTracker.AddNewHabitViewModel.addNewHabitForDaily() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "4442">
+               </Location>
+               <Location
+                  uuid = "D276161C-823A-48E3-BABE-9C224C99D7C7 - 1c05257aef9fcae8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for HabitTracker.AddNewHabitViewModel.addNewHabitForDaily() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "4559">
+               </Location>
+               <Location
+                  uuid = "D276161C-823A-48E3-BABE-9C224C99D7C7 - 375381bc506e96ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for HabitTracker.AddNewHabitViewModel.addNewHabitForDaily() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "624">
+               </Location>
+               <Location
+                  uuid = "D276161C-823A-48E3-BABE-9C224C99D7C7 - cfaa6cfd9a3c52ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for HabitTracker.AddNewHabitViewModel.addNewHabitForDaily() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "170"
+                  endingLineNumber = "170"
+                  offsetFromSymbolStart = "624">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "45BDCF25-A586-454E-81E5-D4F578337911"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
+            landmarkName = "scheduleNotificationWeeklyWithEndDate()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "45BDCF25-A586-454E-81E5-D4F578337911 - 2b90bfc3b4226738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeeklyWithEndDate() -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "229">
+               </Location>
+               <Location
+                  uuid = "45BDCF25-A586-454E-81E5-D4F578337911 - 2b90bfc3b4226738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeeklyWithEndDate() -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "213">
+               </Location>
+               <Location
+                  uuid = "45BDCF25-A586-454E-81E5-D4F578337911 - 2b90bfc3b4226738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeeklyWithEndDate() -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "334">
+               </Location>
+               <Location
+                  uuid = "45BDCF25-A586-454E-81E5-D4F578337911 - 2b90bfc3b4226738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeeklyWithEndDate() -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "346">
+               </Location>
+               <Location
+                  uuid = "45BDCF25-A586-454E-81E5-D4F578337911 - 2b90bfc3b4226738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeeklyWithEndDate() -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "338">
+               </Location>
+               <Location
+                  uuid = "45BDCF25-A586-454E-81E5-D4F578337911 - 2b90bfc3b4226738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeeklyWithEndDate() -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "322">
+               </Location>
+               <Location
+                  uuid = "45BDCF25-A586-454E-81E5-D4F578337911 - 2b90bfc3b4226738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeeklyWithEndDate() -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "325">
+               </Location>
+               <Location
+                  uuid = "45BDCF25-A586-454E-81E5-D4F578337911 - 2b90bfc3b4226738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeeklyWithEndDate() -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "559">
+               </Location>
+               <Location
+                  uuid = "45BDCF25-A586-454E-81E5-D4F578337911 - 2b90bfc3b4226738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeeklyWithEndDate() -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "572">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7CF822B-EC4B-407F-9581-D7CA70A7C38E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "scheduleNotifcationWithEndDate()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D7CF822B-EC4B-407F-9581-D7CA70A7C38E - 8658ee2e22b9ed2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for HabitTracker.AddNewHabitViewModel.scheduleNotifcationWithEndDate() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "240"
+                  endingLineNumber = "240"
+                  offsetFromSymbolStart = "315">
+               </Location>
+               <Location
+                  uuid = "D7CF822B-EC4B-407F-9581-D7CA70A7C38E - af7c17e7796e652a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for HabitTracker.AddNewHabitViewModel.scheduleNotifcationWithEndDate() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "240"
+                  endingLineNumber = "240"
+                  offsetFromSymbolStart = "673">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BF497DE4-C4F2-4098-A89E-17B69D014DFC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "addNewHabitForDaily()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BF497DE4-C4F2-4098-A89E-17B69D014DFC - 1c05257aef9fcba2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for HabitTracker.AddNewHabitViewModel.addNewHabitForDaily() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "4006">
+               </Location>
+               <Location
+                  uuid = "BF497DE4-C4F2-4098-A89E-17B69D014DFC - 375381bc506e97a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for HabitTracker.AddNewHabitViewModel.addNewHabitForDaily() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "95">
+               </Location>
+               <Location
+                  uuid = "BF497DE4-C4F2-4098-A89E-17B69D014DFC - cfaa6cfd9a3c53a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for HabitTracker.AddNewHabitViewModel.addNewHabitForDaily() async throws -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "95">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
