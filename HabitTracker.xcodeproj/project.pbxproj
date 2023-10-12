@@ -19,6 +19,11 @@
 		204437782ACD3A6300AFD650 /* RepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204437772ACD3A6300AFD650 /* RepeatView.swift */; };
 		2044377A2ACD91B100AFD650 /* TimeRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204437792ACD91B100AFD650 /* TimeRangeView.swift */; };
 		2044377F2ACDA08200AFD650 /* RemainderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2044377E2ACDA08200AFD650 /* RemainderView.swift */; };
+		206066FA2AD7B2800012A0E5 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206066F92AD7B2800012A0E5 /* HabitDetailView.swift */; };
+		206066FC2AD7C13A0012A0E5 /* HabitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206066FB2AD7C13A0012A0E5 /* HabitDetailViewModel.swift */; };
+		206066FE2AD7CD140012A0E5 /* PomodoroTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206066FD2AD7CD140012A0E5 /* PomodoroTimer.swift */; };
+		206067002AD7F4CF0012A0E5 /* PomodoroTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206066FF2AD7F4CF0012A0E5 /* PomodoroTimerView.swift */; };
+		206067042AD7FFC30012A0E5 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206067032AD7FFC30012A0E5 /* ProgressRing.swift */; };
 		207E7B8C2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 207E7B8A2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld */; };
 		207E7B8F2AC5ED4D008CD6FD /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E7B8E2AC5ED4D008CD6FD /* PersistenceController.swift */; };
 		20B7356D2AC876E20086E6FF /* AddNewHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7356C2AC876E20086E6FF /* AddNewHabitViewModel.swift */; };
@@ -44,6 +49,11 @@
 		204437772ACD3A6300AFD650 /* RepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatView.swift; sourceTree = "<group>"; };
 		204437792ACD91B100AFD650 /* TimeRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeView.swift; sourceTree = "<group>"; };
 		2044377E2ACDA08200AFD650 /* RemainderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainderView.swift; sourceTree = "<group>"; };
+		206066F92AD7B2800012A0E5 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
+		206066FB2AD7C13A0012A0E5 /* HabitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewModel.swift; sourceTree = "<group>"; };
+		206066FD2AD7CD140012A0E5 /* PomodoroTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimer.swift; sourceTree = "<group>"; };
+		206066FF2AD7F4CF0012A0E5 /* PomodoroTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimerView.swift; sourceTree = "<group>"; };
+		206067032AD7FFC30012A0E5 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
 		207E7B8B2AC5ED18008CD6FD /* HabitContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitContainer.xcdatamodel; sourceTree = "<group>"; };
 		207E7B8E2AC5ED4D008CD6FD /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		20B7356C2AC876E20086E6FF /* AddNewHabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabitViewModel.swift; sourceTree = "<group>"; };
@@ -199,6 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				20CE682C2ACFE8E60064060E /* ProgressBar.swift */,
+				206066FD2AD7CD140012A0E5 /* PomodoroTimer.swift */,
+				206066FF2AD7F4CF0012A0E5 /* PomodoroTimerView.swift */,
+				206067032AD7FFC30012A0E5 /* ProgressRing.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -219,6 +232,7 @@
 			children = (
 				20B7356C2AC876E20086E6FF /* AddNewHabitViewModel.swift */,
 				20CE682A2ACFC25A0064060E /* HabitListViewModel.swift */,
+				206066FB2AD7C13A0012A0E5 /* HabitDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				202AF5502AC5C3BB009E75C8 /* Habit */,
+				206066F92AD7B2800012A0E5 /* HabitDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,13 +331,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206066FE2AD7CD140012A0E5 /* PomodoroTimer.swift in Sources */,
 				204437752ACD25EE00AFD650 /* FrequencyView.swift in Sources */,
+				206067042AD7FFC30012A0E5 /* ProgressRing.swift in Sources */,
 				20CE682D2ACFE8E60064060E /* ProgressBar.swift in Sources */,
 				20B7356D2AC876E20086E6FF /* AddNewHabitViewModel.swift in Sources */,
 				20B735712ACBDA6C0086E6FF /* HabitEntity.swift in Sources */,
 				20CE682B2ACFC25A0064060E /* HabitListViewModel.swift in Sources */,
 				204437782ACD3A6300AFD650 /* RepeatView.swift in Sources */,
+				206066FA2AD7B2800012A0E5 /* HabitDetailView.swift in Sources */,
 				2044377A2ACD91B100AFD650 /* TimeRangeView.swift in Sources */,
+				206067002AD7F4CF0012A0E5 /* PomodoroTimerView.swift in Sources */,
 				20CE682F2AD008DE0064060E /* FilteredHabitsView.swift in Sources */,
 				203780D42ACC3EDF005C2F33 /* Enums.swift in Sources */,
 				203780D12ACC0E6E005C2F33 /* WeekDayEntity.swift in Sources */,
@@ -331,6 +350,7 @@
 				202AF5412AC5C34D009E75C8 /* ContentView.swift in Sources */,
 				207E7B8C2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld in Sources */,
 				202AF53F2AC5C34D009E75C8 /* HabitTrackerApp.swift in Sources */,
+				206066FC2AD7C13A0012A0E5 /* HabitDetailViewModel.swift in Sources */,
 				20CE68292ACE93C00064060E /* NotificationManager.swift in Sources */,
 				207E7B8F2AC5ED4D008CD6FD /* PersistenceController.swift in Sources */,
 				2022AC952AD4089300F27AED /* Date+Extension.swift in Sources */,

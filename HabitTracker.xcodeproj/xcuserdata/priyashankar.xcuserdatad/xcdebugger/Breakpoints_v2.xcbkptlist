@@ -417,6 +417,21 @@
                   endingLineNumber = "307"
                   offsetFromSymbolStart = "572">
                </Location>
+               <Location
+                  uuid = "45BDCF25-A586-454E-81E5-D4F578337911 - 2b90bfc3b4226738"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HabitTracker.AddNewHabitViewModel.scheduleNotificationWeeklyWithEndDate() -&gt; ()"
+                  moduleName = "HabitTracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/priyashankar/Projects/Xcode/SwiftUI/Side%20Projects/HabitTracker/HabitTracker/Core/ViewModel/AddNewHabitViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "564">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

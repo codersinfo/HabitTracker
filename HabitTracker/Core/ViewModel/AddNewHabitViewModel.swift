@@ -311,8 +311,8 @@ private extension AddNewHabitViewModel {
         print("End Date - \(endDate)")
         print(currentDate)
         
-        let fCurrentDate = currentDate.getDay(format: "yyyy-MM-dd")
-        let fEndDate = endDate.getDay(format: "yyyy-MM-dd")
+//        let fCurrentDate = currentDate.getDay(format: "yyyy-MM-dd")
+//        let fEndDate = endDate.getDay(format: "yyyy-MM-dd")
         
         while currentDate <= endDate {
             let weekSymbol = currentDate.getDay(format: "EEEE")
