@@ -8,11 +8,11 @@
 import SwiftUI
 import UserNotifications
 
-enum TimerMode {
-    case running
-    case paused
-    case initial
-}
+//enum TimerMode {
+//    case running
+//    case paused
+//    case initial
+//}
 
 struct Timing {
     var totalTimeInMinutes: Int
@@ -27,13 +27,17 @@ struct Timing {
 }
 
 struct PomodoroTimerView: View {
-    var timing = Timing(hours: 00, mins: 1)
+    var timing: Timing
     @State private var remainingTimeInSeconds: Int = 0
     @State private var timer: Timer?
     @State private var timeString: String = "00:00:00"
     @State private var isTimerRunning: Bool = false
     @State private var progress: Double = 0
     private var notificationIdentifier: String = UUID().uuidString
+    
+    init(timing: Timing) {
+        self.timing = timing
+    }
     
     var body: some View {
         VStack {
@@ -97,12 +101,12 @@ struct PomodoroTimerView: View {
         }
     }
     
-    func defaultTimer() {
+    private func defaultTimer() {
         remainingTimeInSeconds = timing.totalTimeInSeconds
         formattedTime()
     }
     
-    func startTimer() {
+    private func startTimer() {
         withAnimation(.easeInOut(duration: 0.25)) {
             isTimerRunning = true
             timer = nil
@@ -119,13 +123,13 @@ struct PomodoroTimerView: View {
         }
     }
     
-    func pauseTimer() {
+    private func pauseTimer() {
         isTimerRunning = false
         timer?.invalidate()
         timer = nil
     }
     
-    func resetTimer() {
+    private func resetTimer() {
         withAnimation(.easeInOut(duration: 0.25)) {
             isTimerRunning = false
             timer?.invalidate()
@@ -135,7 +139,7 @@ struct PomodoroTimerView: View {
         }
     }
     
-    func formattedTime() {
+    private func formattedTime() {
         let hrs = remainingTimeInSeconds / 3600
         let mins = (remainingTimeInSeconds / 60) % 60
         let seconds = remainingTimeInSeconds % 60
@@ -145,7 +149,7 @@ struct PomodoroTimerView: View {
         print(timeString)
     }
     
-    func scheduleNotification() {
+    private func scheduleNotification() {
         let content = UNMutableNotificationContent()
         content.title = "Time is up"
         content.subtitle = "Completed"
@@ -160,7 +164,7 @@ struct PomodoroTimerView: View {
 }
 
 #Preview {
-    PomodoroTimerView()
+    PomodoroTimerView(timing: .init(hours: 0, mins: 1))
 }
 
 
