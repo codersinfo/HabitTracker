@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProgressBar: View {
+struct RoundedRectProgressBar: View {
     var text: String = "Habit name"
     @Binding var value: Float
     var color: Color = .green
@@ -39,7 +39,7 @@ struct ProgressBar: View {
 }
 
 #Preview {
-    ProgressBar(value: .constant(2/10))
+    RoundedRectProgressBar(value: .constant(2/10))
         .frame(height: 60)
         .padding()
 }

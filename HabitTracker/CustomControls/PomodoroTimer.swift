@@ -8,11 +8,6 @@
 import SwiftUI
 import Observation
 
-
-class PomodoroTimerViewModel {
-    
-}
-
 struct PomodoroTimer: View {
     let (minutes, second) = (25, 0)
     
@@ -86,7 +81,7 @@ struct PomodoroTimer: View {
             isTimerRunning = true
         }
         
-        mins = 5
+        hours = 1
         timerValue = hours > 0 ? String(format: "%02i:%02i:%02i", hours, mins, seconds) : String(format: "%02i:%02i", mins, seconds)
         //Total seconds for timer Animation
         totalSeconds = (hours * 3600) + (mins * 60) + seconds

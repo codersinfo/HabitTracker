@@ -24,7 +24,7 @@ struct FilteredHabitsView: View {
             VStack(spacing: 14) {
                 ForEach(request) { habit in
                     VStack {
-                        ProgressBar(text: habit.name, value: .constant(0.4), color: Color(habit.color))
+                        RoundedRectProgressBar(text: habit.name, value: .constant(0.4), color: Color(habit.color))
                             .frame(height: 60)
                         
                         HStack {

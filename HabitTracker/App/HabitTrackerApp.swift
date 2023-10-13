@@ -11,8 +11,13 @@ import SwiftUI
 struct HabitTrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            HabitListView()
-                .environment(\.managedObjectContext, PersistenceController.shared.viewContext)
+            //            HabitListView()
+            //                .environment(\.managedObjectContext, PersistenceController.shared.viewContext)
+            //                .onAppear(perform: {
+            //                    NotificationManager.instance.requestAuthorization()
+            //                })
+            
+            PomodoroTimerView()
                 .onAppear(perform: {
                     NotificationManager.instance.requestAuthorization()
                 })

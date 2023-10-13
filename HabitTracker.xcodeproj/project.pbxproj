@@ -23,6 +23,9 @@
 		206066FC2AD7C13A0012A0E5 /* HabitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206066FB2AD7C13A0012A0E5 /* HabitDetailViewModel.swift */; };
 		206066FE2AD7CD140012A0E5 /* PomodoroTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206066FD2AD7CD140012A0E5 /* PomodoroTimer.swift */; };
 		206067002AD7F4CF0012A0E5 /* PomodoroTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206066FF2AD7F4CF0012A0E5 /* PomodoroTimerView.swift */; };
+		2060670A2AD91B020012A0E5 /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206067092AD91B020012A0E5 /* ProgressRing.swift */; };
+		2060670C2AD920B40012A0E5 /* IconCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060670B2AD920B40012A0E5 /* IconCircleButton.swift */; };
+		2060670E2AD9473E0012A0E5 /* CircularStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2060670D2AD9473E0012A0E5 /* CircularStepperView.swift */; };
 		207E7B8C2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 207E7B8A2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld */; };
 		207E7B8F2AC5ED4D008CD6FD /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E7B8E2AC5ED4D008CD6FD /* PersistenceController.swift */; };
 		20B7356D2AC876E20086E6FF /* AddNewHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7356C2AC876E20086E6FF /* AddNewHabitViewModel.swift */; };
@@ -30,7 +33,7 @@
 		20B735712ACBDA6C0086E6FF /* HabitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B735702ACBDA6C0086E6FF /* HabitEntity.swift */; };
 		20CE68292ACE93C00064060E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE68282ACE93C00064060E /* NotificationManager.swift */; };
 		20CE682B2ACFC25A0064060E /* HabitListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE682A2ACFC25A0064060E /* HabitListViewModel.swift */; };
-		20CE682D2ACFE8E60064060E /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE682C2ACFE8E60064060E /* ProgressBar.swift */; };
+		20CE682D2ACFE8E60064060E /* RoundedRectProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE682C2ACFE8E60064060E /* RoundedRectProgressBar.swift */; };
 		20CE682F2AD008DE0064060E /* FilteredHabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CE682E2AD008DE0064060E /* FilteredHabitsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,9 @@
 		206066FB2AD7C13A0012A0E5 /* HabitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewModel.swift; sourceTree = "<group>"; };
 		206066FD2AD7CD140012A0E5 /* PomodoroTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimer.swift; sourceTree = "<group>"; };
 		206066FF2AD7F4CF0012A0E5 /* PomodoroTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTimerView.swift; sourceTree = "<group>"; };
+		206067092AD91B020012A0E5 /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
+		2060670B2AD920B40012A0E5 /* IconCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCircleButton.swift; sourceTree = "<group>"; };
+		2060670D2AD9473E0012A0E5 /* CircularStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularStepperView.swift; sourceTree = "<group>"; };
 		207E7B8B2AC5ED18008CD6FD /* HabitContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitContainer.xcdatamodel; sourceTree = "<group>"; };
 		207E7B8E2AC5ED4D008CD6FD /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		20B7356C2AC876E20086E6FF /* AddNewHabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabitViewModel.swift; sourceTree = "<group>"; };
@@ -59,7 +65,7 @@
 		20B735702ACBDA6C0086E6FF /* HabitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEntity.swift; sourceTree = "<group>"; };
 		20CE68282ACE93C00064060E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		20CE682A2ACFC25A0064060E /* HabitListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListViewModel.swift; sourceTree = "<group>"; };
-		20CE682C2ACFE8E60064060E /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		20CE682C2ACFE8E60064060E /* RoundedRectProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectProgressBar.swift; sourceTree = "<group>"; };
 		20CE682E2AD008DE0064060E /* FilteredHabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredHabitsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,9 +212,12 @@
 		202AF5562AC5C47B009E75C8 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
-				20CE682C2ACFE8E60064060E /* ProgressBar.swift */,
+				20CE682C2ACFE8E60064060E /* RoundedRectProgressBar.swift */,
 				206066FD2AD7CD140012A0E5 /* PomodoroTimer.swift */,
+				206067092AD91B020012A0E5 /* ProgressRing.swift */,
 				206066FF2AD7F4CF0012A0E5 /* PomodoroTimerView.swift */,
+				2060670B2AD920B40012A0E5 /* IconCircleButton.swift */,
+				2060670D2AD9473E0012A0E5 /* CircularStepperView.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -330,7 +339,8 @@
 			files = (
 				206066FE2AD7CD140012A0E5 /* PomodoroTimer.swift in Sources */,
 				204437752ACD25EE00AFD650 /* FrequencyView.swift in Sources */,
-				20CE682D2ACFE8E60064060E /* ProgressBar.swift in Sources */,
+				2060670A2AD91B020012A0E5 /* ProgressRing.swift in Sources */,
+				20CE682D2ACFE8E60064060E /* RoundedRectProgressBar.swift in Sources */,
 				20B7356D2AC876E20086E6FF /* AddNewHabitViewModel.swift in Sources */,
 				20B735712ACBDA6C0086E6FF /* HabitEntity.swift in Sources */,
 				20CE682B2ACFC25A0064060E /* HabitListViewModel.swift in Sources */,
@@ -342,6 +352,7 @@
 				203780D42ACC3EDF005C2F33 /* Enums.swift in Sources */,
 				203780D12ACC0E6E005C2F33 /* WeekDayEntity.swift in Sources */,
 				202AF5582AC5C5C6009E75C8 /* AddNewHabitView.swift in Sources */,
+				2060670C2AD920B40012A0E5 /* IconCircleButton.swift in Sources */,
 				2044377F2ACDA08200AFD650 /* RemainderView.swift in Sources */,
 				202AF5412AC5C34D009E75C8 /* ContentView.swift in Sources */,
 				207E7B8C2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld in Sources */,
@@ -349,6 +360,7 @@
 				206066FC2AD7C13A0012A0E5 /* HabitDetailViewModel.swift in Sources */,
 				20CE68292ACE93C00064060E /* NotificationManager.swift in Sources */,
 				207E7B8F2AC5ED4D008CD6FD /* PersistenceController.swift in Sources */,
+				2060670E2AD9473E0012A0E5 /* CircularStepperView.swift in Sources */,
 				2022AC952AD4089300F27AED /* Date+Extension.swift in Sources */,
 				20B7356F2ACBD0E60086E6FF /* HabitListView.swift in Sources */,
 			);
