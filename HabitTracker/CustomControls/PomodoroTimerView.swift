@@ -107,7 +107,7 @@ struct PomodoroTimerView: View {
     }
     
     private func startTimer() {
-        withAnimation(.easeInOut(duration: 0.25)) {
+        withAnimation(.easeOut(duration: 0.25)) {
             isTimerRunning = true
             timer = nil
             scheduleNotification()
@@ -139,6 +139,7 @@ struct PomodoroTimerView: View {
         }
     }
     
+    ///Formatting Time to display hrs : mins : seconds
     private func formattedTime() {
         let hrs = remainingTimeInSeconds / 3600
         let mins = (remainingTimeInSeconds / 60) % 60
@@ -149,6 +150,8 @@ struct PomodoroTimerView: View {
         print(timeString)
     }
     
+    //MARK: Schedule notification
+    ///Schedule notification when the timer is finished
     private func scheduleNotification() {
         let content = UNMutableNotificationContent()
         content.title = "Time is up"
@@ -164,7 +167,7 @@ struct PomodoroTimerView: View {
 }
 
 #Preview {
-    PomodoroTimerView(timing: .init(hours: 0, mins: 1))
+    PomodoroTimerView(timing: .init(hours: 1, mins: 30))
 }
 
 

@@ -11,6 +11,7 @@ struct AddNewHabitView: View {
     @Environment(\.dismiss) var dismiss
     @State var addVm: AddNewHabitViewModel
     //  @State var isRepeat: Bool = false
+    @State var isGoalPeriodPresented: Bool = false
     
     var body: some View {
         ScrollView {
@@ -135,23 +136,59 @@ extension AddNewHabitView {
             //                Text("/ per day")
             //                    .font(.footnote)
             //                    .foregroundStyle(.gray)
-            //            }
+            //            }334
             
             if addVm.hasGoalSet {
                 HStack(spacing: 14) {
-                    TextField("30", text: $addVm.note)
-                        .padding()
-                        .background(Color("bgColor"), in: RoundedRectangle(cornerRadius: 12))
-                        .lineLimit(2)
+//                    Menu {
+//                        Button("First") {  }
+//                                Button("Second") {  }
+//                    } label: {
+//                        Text("hhihi")
+//                            .padding()
+//                            .background(Color("bgColor"), in: RoundedRectangle(cornerRadius: 12))
+//                    }
+
+                    if addVm.goalPeriod == .hoursMins {
+                        HStack {
+                            TextField("hours", text: $addVm.hours.toUnwrapped(defaultValue: ""))
+                                .padding()
+                                .background(Color("bgColor"), in: RoundedRectangle(cornerRadius: 12))
+                                .lineLimit(2)
+                                
+                            TextField("mins", text: $addVm.mins.toUnwrapped(defaultValue: ""))
+                                .padding()
+                                .background(Color("bgColor"), in: RoundedRectangle(cornerRadius: 12))
+                                .lineLimit(2)
+                        }
+                    } else {
+                        TextField("30", text: $addVm.goal)
+                            .padding()
+                            .background(Color("bgColor"), in: RoundedRectangle(cornerRadius: 12))
+                            .lineLimit(2)
+                    }
                     
-                    TextField("mins", text: $addVm.note)
-                        .padding()
-                        .background(Color("bgColor"), in: RoundedRectangle(cornerRadius: 12))
-                        .lineLimit(2)
+//                    TextField("mins", text: $addVm.goalPeriod)
+//                        .padding()
+//                        .background(Color("bgColor"), in: RoundedRectangle(cornerRadius: 12))
+//                        .lineLimit(2)
+                    
+                    Picker("", selection: $addVm.goalPeriod) {
+                        ForEach(GoalUnitType.allCases, id: \.rawValue) { type in
+                            Text(type.name)
+                                .tag(type)
+                        }
+                    }
+                    .padding(9)
+                    .background(Color("bgColor"), in: RoundedRectangle(cornerRadius: 12))
                 }
             }
+            
             Divider()
         }
+        .sheet(isPresented: $isGoalPeriodPresented, content: {
+            
+        })
     }
     
     //    var repeatView: some View {
@@ -228,5 +265,12 @@ extension AddNewHabitView {
                 DatePicker("", selection: $addVm.endDate, displayedComponents: .date)
             }
         }
+    }
+}
+
+
+extension Binding {
+    func toUnwrapped<T>(defaultValue: T) -> Binding<T> where Value == Optional<T> {
+        Binding<T>(get: { self.wrappedValue ?? defaultValue }, set: { self.wrappedValue = $0 })
     }
 }

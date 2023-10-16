@@ -7,8 +7,17 @@
 
 import Foundation
 
-enum goalUnitType: String, CaseIterable {
-    case meter, kiloMeter, time, count
+enum GoalUnitType: String, CaseIterable {
+    case meter, kiloMeter, hoursMins, count
+    
+    var name: String {
+        switch self {
+        case .hoursMins:
+            "Hour & mins"
+        default:
+            rawValue.capitalized
+        }
+    }
 }
 
 
@@ -20,7 +29,7 @@ enum goalUnitType: String, CaseIterable {
 //    var id: String {
 //        UUID().uuidString
 //    }
-//    
+//
 //    var name: String {
 //        rawValue.capitalized
 //    }
@@ -29,11 +38,11 @@ enum goalUnitType: String, CaseIterable {
 //enum HabitType: String, CaseIterable, Identifiable {
 //    case build
 //    case quit
-//    
+//
 //    var id: String {
 //        UUID().uuidString
 //    }
-//    
+//
 //    var name: String {
 //        rawValue.capitalized
 //    }
@@ -44,11 +53,11 @@ enum goalUnitType: String, CaseIterable {
 //    case morning
 //    case afternoon
 //    case evening
-//    
+//
 //    var id: String {
 //        UUID().uuidString
 //    }
-//    
+//
 //    var name: String {
 //        rawValue.capitalized
 //    }

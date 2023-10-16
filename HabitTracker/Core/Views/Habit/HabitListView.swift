@@ -18,7 +18,7 @@ struct HabitListView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 14) {
-                //MARK: Weekly calendar fview
+                //MARK: Weekly calendar view
                 HStack {
                     ForEach(listVm.currentWeek, id:\.self) { day in
                         VStack(spacing: 12) {
@@ -74,26 +74,31 @@ struct HabitListView: View {
 //                        }
 //                    }
 //                }
-                .toolbar(content: {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button(action: {
-                            showAddNewHabitView.toggle()
-                        }, label: {
-                            Text("Add")
-                        })
-                    }
-                })
+                
                 //            .onAppear {
                 //                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 //                    print(habits)
                 //                }
                 //            }
-                .sheet(isPresented: $showAddNewHabitView, content: {
-                    NavigationStack {
-                        AddNewHabitView(addVm: .init(context: provider))
-                    }
-                })
+                
             }
+            .navigationDestination(for: Route.self, destination: { path in
+                path
+            })
+            .sheet(isPresented: $showAddNewHabitView, content: {
+                NavigationStack {
+                    AddNewHabitView(addVm: .init(context: provider))
+                }
+            })
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        showAddNewHabitView.toggle()
+                    }, label: {
+                        Text("Add")
+                    })
+                }
+            })
             .padding()
             .navigationTitle("Habits")
         }

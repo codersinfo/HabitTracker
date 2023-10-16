@@ -18,8 +18,8 @@ class AddNewHabitViewModel {
     var icon: String = "book"
     var color: String = "card-1"
     var hasGoalSet: Bool = false
-    var goal: String = ""
-    var goalPeriod: String = ""
+    var goal: String = "1"
+    var goalPeriod: GoalUnitType = .count
     var timeRange: TimeRange = .anytime
     var frequency: Frequency = .daily
     var isRepeat: Bool = false
@@ -30,9 +30,14 @@ class AddNewHabitViewModel {
     var startDate: Date = Date()
     var hasEndDateEnabled: Bool = false
     var endDate: Date = Date()
+    var hours: String?
+    var mins: String?
     
-    var habit: HabitEntity
-    var weekDays: WeekDayEntity? = nil
+    private var goalTime: String {
+        "\(hours ?? "0"):\(mins ?? "0")"
+    }
+    private var habit: HabitEntity
+    private var weekDays: WeekDayEntity? = nil
     
     private let context: NSManagedObjectContext
     private let calendar = Calendar.current
@@ -105,18 +110,31 @@ class AddNewHabitViewModel {
         
         //MARK: Goal
         if hasGoalSet {
-            if !goal.isEmpty && !goalPeriod.isEmpty {
-                habit.goal = goal
-                habit.goalPeriod = goalPeriod
+            if goalPeriod == .hoursMins {
+                if hours == "0" && mins == "0" {
+                   
+                } else {
+                    habit.goal = goalTime
+                }
             } else {
-                //Set default values
-                habit.goal = "1"
-                habit.goalPeriod = "Count"
+                if !goal.isEmpty {
+                    habit.goal = goal
+                }
             }
+            
+            habit.goalPeriod = goalPeriod.rawValue
+            
+            // if !goal.isEmpty && !goalPeriod.isEmpty {
+            //  habit.goal = goal
+            //  habit.goalPeriod = goalPeriod
+            //  } else {
+            //Set default values
+                // habit.goal = goal
+            // }
         } else {
             //Set default values
-            habit.goal = "1"
-            habit.goalPeriod = "Count"
+            habit.goal = goal
+            habit.goalPeriod = goalPeriod.rawValue
         }
         
         if frequency == .weekly {
@@ -311,14 +329,14 @@ private extension AddNewHabitViewModel {
         print("End Date - \(endDate)")
         print(currentDate)
         
-//        let fCurrentDate = currentDate.getDay(format: "yyyy-MM-dd")
-//        let fEndDate = endDate.getDay(format: "yyyy-MM-dd")
+        //        let formattedCurrentDate = currentDate.getDay(format: "yyyy-MM-dd")
+        //        let formattedEndDate = endDate.getDay(format: "yyyy-MM-dd")
         
         while currentDate <= endDate {
             let weekSymbol = currentDate.getDay(format: "EEEE")
             print(weekSymbol)
             var dateComponents = getNotificationDateComponents()
-
+            
             let weekDay = savedWeekDays.first { $0 == weekSymbol }
             print("Get WeekDay - \(weekDay ?? "")")
             
@@ -339,24 +357,24 @@ private extension AddNewHabitViewModel {
             currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
             print("currentDate - \(currentDate)")
             
-//            if weekdayw.count != 0 {
-//                let weekDaySymbols = calendar.weekdaySymbols
-//                let day = weekDaySymbols.firstIndex {  $0 == weekdayw.first } ?? -1
-//                
-//                if day != -1 {
-//                    dateComponents.weekday = day + 1
-//                    
-//                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-//                    
-//                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-//                    
-//                    UNUserNotificationCenter.current().add(request)
-//                    print("Weekday - \(day)")
-//                    
-//                    currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
-//                    print("currentDate - \(currentDate)")
-//                }
-//            }
+            //            if weekdayw.count != 0 {
+            //                let weekDaySymbols = calendar.weekdaySymbols
+            //                let day = weekDaySymbols.firstIndex {  $0 == weekdayw.first } ?? -1
+            //
+            //                if day != -1 {
+            //                    dateComponents.weekday = day + 1
+            //
+            //                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            //
+            //                    let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            //
+            //                    UNUserNotificationCenter.current().add(request)
+            //                    print("Weekday - \(day)")
+            //
+            //                    currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
+            //                    print("currentDate - \(currentDate)")
+            //                }
+            //            }
         }
     }
     

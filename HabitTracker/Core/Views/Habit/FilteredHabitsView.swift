@@ -8,6 +8,23 @@
 import SwiftUI
 import CoreData
 
+enum Route: Hashable, View {
+    case detail(GoalUnitType, String)
+//    case list
+//    case add
+    
+    var body: some View {
+        switch self {
+        case .detail(let goalUnitType, let value):
+            HabitDetailView(goalType: goalUnitType, value: value)
+//        case .list:
+//            <#code#>
+//        case .add:
+//            <#code#>
+        }
+    }
+}
+
 struct FilteredHabitsView: View {
     @FetchRequest private var request: FetchedResults<HabitEntity>
     
@@ -23,13 +40,16 @@ struct FilteredHabitsView: View {
         ScrollView {
             VStack(spacing: 14) {
                 ForEach(request) { habit in
-                    VStack {
-                        RoundedRectProgressBar(text: habit.name, value: .constant(0.4), color: Color(habit.color))
-                            .frame(height: 60)
-                        
-                        HStack {
-                            ForEach(habit.weekdayArray) { day in
-                                Text(day.day ?? "")
+                    let goalPeriod = GoalUnitType(rawValue: habit.goalPeriod ?? "")
+                    NavigationLink(value: Route.detail(goalPeriod ?? .count, habit.goal ?? "")) {
+                        VStack {
+                            RoundedRectProgressBar(text: habit.name, value: .constant(0.4), color: Color(habit.color))
+                                .frame(height: 60)
+                            
+                            HStack {
+                                ForEach(habit.weekdayArray) { day in
+                                    Text(day.day ?? "")
+                                }
                             }
                         }
                     }
