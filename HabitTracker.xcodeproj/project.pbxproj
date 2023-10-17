@@ -13,6 +13,9 @@
 		202AF5432AC5C34E009E75C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202AF5422AC5C34E009E75C8 /* Assets.xcassets */; };
 		202AF5462AC5C34E009E75C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 202AF5452AC5C34E009E75C8 /* Preview Assets.xcassets */; };
 		202AF5582AC5C5C6009E75C8 /* AddNewHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202AF5572AC5C5C5009E75C8 /* AddNewHabitView.swift */; };
+		2031FEEB2ADE53CB003F0890 /* HabitRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031FEEA2ADE53CB003F0890 /* HabitRecord.swift */; };
+		2031FEED2ADE60A3003F0890 /* HabitRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031FEEC2ADE60A3003F0890 /* HabitRecordViewModel.swift */; };
+		2031FEEF2ADE9A71003F0890 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031FEEE2ADE9A71003F0890 /* Route.swift */; };
 		203780D12ACC0E6E005C2F33 /* WeekDayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203780D02ACC0E6E005C2F33 /* WeekDayEntity.swift */; };
 		203780D42ACC3EDF005C2F33 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203780D32ACC3EDF005C2F33 /* Enums.swift */; };
 		204437752ACD25EE00AFD650 /* FrequencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204437742ACD25ED00AFD650 /* FrequencyView.swift */; };
@@ -45,6 +48,9 @@
 		202AF5422AC5C34E009E75C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		202AF5452AC5C34E009E75C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		202AF5572AC5C5C5009E75C8 /* AddNewHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewHabitView.swift; sourceTree = "<group>"; };
+		2031FEEA2ADE53CB003F0890 /* HabitRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRecord.swift; sourceTree = "<group>"; };
+		2031FEEC2ADE60A3003F0890 /* HabitRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRecordViewModel.swift; sourceTree = "<group>"; };
+		2031FEEE2ADE9A71003F0890 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		203780D02ACC0E6E005C2F33 /* WeekDayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayEntity.swift; sourceTree = "<group>"; };
 		203780D32ACC3EDF005C2F33 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		204437742ACD25ED00AFD650 /* FrequencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyView.swift; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				207E7B8A2AC5ED18008CD6FD /* HabitContainer.xcdatamodeld */,
+				2031FEEA2ADE53CB003F0890 /* HabitRecord.swift */,
 				203780D02ACC0E6E005C2F33 /* WeekDayEntity.swift */,
 				20B735702ACBDA6C0086E6FF /* HabitEntity.swift */,
 				203780D32ACC3EDF005C2F33 /* Enums.swift */,
@@ -190,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				20CE68282ACE93C00064060E /* NotificationManager.swift */,
+				2031FEEE2ADE9A71003F0890 /* Route.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 				20B7356C2AC876E20086E6FF /* AddNewHabitViewModel.swift */,
 				20CE682A2ACFC25A0064060E /* HabitListViewModel.swift */,
 				206066FB2AD7C13A0012A0E5 /* HabitDetailViewModel.swift */,
+				2031FEEC2ADE60A3003F0890 /* HabitRecordViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -341,6 +350,8 @@
 				204437752ACD25EE00AFD650 /* FrequencyView.swift in Sources */,
 				2060670A2AD91B020012A0E5 /* ProgressRing.swift in Sources */,
 				20CE682D2ACFE8E60064060E /* RoundedRectProgressBar.swift in Sources */,
+				2031FEEF2ADE9A71003F0890 /* Route.swift in Sources */,
+				2031FEED2ADE60A3003F0890 /* HabitRecordViewModel.swift in Sources */,
 				20B7356D2AC876E20086E6FF /* AddNewHabitViewModel.swift in Sources */,
 				20B735712ACBDA6C0086E6FF /* HabitEntity.swift in Sources */,
 				20CE682B2ACFC25A0064060E /* HabitListViewModel.swift in Sources */,
@@ -349,6 +360,7 @@
 				2044377A2ACD91B100AFD650 /* TimeRangeView.swift in Sources */,
 				206067002AD7F4CF0012A0E5 /* PomodoroTimerView.swift in Sources */,
 				20CE682F2AD008DE0064060E /* FilteredHabitsView.swift in Sources */,
+				2031FEEB2ADE53CB003F0890 /* HabitRecord.swift in Sources */,
 				203780D42ACC3EDF005C2F33 /* Enums.swift in Sources */,
 				203780D12ACC0E6E005C2F33 /* WeekDayEntity.swift in Sources */,
 				202AF5582AC5C5C6009E75C8 /* AddNewHabitView.swift in Sources */,

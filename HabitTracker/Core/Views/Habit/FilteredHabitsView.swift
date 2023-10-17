@@ -8,31 +8,20 @@
 import SwiftUI
 import CoreData
 
-enum Route: Hashable, View {
-    case detail(GoalUnitType, String)
-//    case list
-//    case add
-    
-    var body: some View {
-        switch self {
-        case .detail(let goalUnitType, let value):
-            HabitDetailView(goalType: goalUnitType, value: value)
-//        case .list:
-//            <#code#>
-//        case .add:
-//            <#code#>
-        }
-    }
-}
+
 
 struct FilteredHabitsView: View {
     @FetchRequest private var request: FetchedResults<HabitEntity>
+    var provider: PersistenceController
+    let selectedDate: Date
     
-    init(dateToFilter: Date) {
+    init(dateToFilter: Date, providerContext: PersistenceController) {
         // _request = FetchRequest(fetchRequest: HabitEntity.all())
-       // _request = FetchRequest(fetchRequest: HabitEntity.getFilteredData(for: dateToFilter))
-       // _request = FetchRequest(fetchRequest: HabitEntity.getFilteredDataForWeekly(for: dateToFilter))
+        // _request = FetchRequest(fetchRequest: HabitEntity.getFilteredData(for: dateToFilter))
+        // _request = FetchRequest(fetchRequest: HabitEntity.getFilteredDataForWeekly(for: dateToFilter))
         //print(request)
+        self.selectedDate = dateToFilter
+        provider = providerContext
         _request = FetchRequest(fetchRequest: HabitEntity.getHabitDate(for: dateToFilter))
     }
     
@@ -40,8 +29,9 @@ struct FilteredHabitsView: View {
         ScrollView {
             VStack(spacing: 14) {
                 ForEach(request) { habit in
-                    let goalPeriod = GoalUnitType(rawValue: habit.goalPeriod ?? "")
-                    NavigationLink(value: Route.detail(goalPeriod ?? .count, habit.goal ?? "")) {
+                    //                    Route.detail(goalPeriod ?? .count, habit.goal ?? "")
+                    //                    let goalPeriod = GoalUnitType(rawValue: habit.goalPeriod ?? "")
+                    NavigationLink(value: Route.detail(habit, selectedDate, provider)) {
                         VStack {
                             RoundedRectProgressBar(text: habit.name, value: .constant(0.4), color: Color(habit.color))
                                 .frame(height: 60)
@@ -57,8 +47,8 @@ struct FilteredHabitsView: View {
             }
         }
         .onAppear(perform: {
-//            print(Date.yesterday)
-//            print(Date.tomorrow)
+            //            print(Date.yesterday)
+            //            print(Date.tomorrow)
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 print(request)
             }
@@ -70,10 +60,12 @@ struct FilteredHabitsView: View {
 #Preview {
     Group {
         let preview = PersistenceController.shared
-        FilteredHabitsView(dateToFilter: Date())
-            .environment(\.managedObjectContext, preview.viewContext)
-            .onAppear {
-                HabitEntity.makePreview(count: 5, in: preview.viewContext )
-            }
+        NavigationStack {
+            FilteredHabitsView(dateToFilter: Date(), providerContext: preview)
+                .environment(\.managedObjectContext, preview.viewContext)
+                .onAppear {
+                    HabitEntity.makePreview(count: 5, in: preview.viewContext)
+                }
+        }
     }
 }

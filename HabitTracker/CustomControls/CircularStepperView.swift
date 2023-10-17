@@ -5,6 +5,8 @@
 //  Created by Priya Shankar on 13/10/23.
 //
 
+//TODO: adding notification when finishes with haptic and sound
+
 import SwiftUI
 
 struct CircularStepperView: View {
@@ -65,9 +67,6 @@ struct CircularStepperView: View {
                         .frame(width: 50, height: 50)
                 }
             }
-            
-          
-            //.offset(y: 20)
         }
         //        .onAppear(perform: {
         //            withAnimation(.easeInOut(duration: 0.25)) {
@@ -114,10 +113,6 @@ struct CircularStepperView: View {
         }
     }
     
-    //    func defaultCount() {
-    //        totalCount = 10
-    //    }
-    
     private func addToCount() {
         withAnimation(.easeInOut(duration: 0.25)) {
             if remainingCount < totalCount {
@@ -134,6 +129,7 @@ struct CircularStepperView: View {
         }
     }
 }
+
 
 #Preview {
     CircularStepperView(totalCount: 20)

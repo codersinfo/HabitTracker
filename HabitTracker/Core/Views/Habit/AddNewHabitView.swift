@@ -136,7 +136,7 @@ extension AddNewHabitView {
             //                Text("/ per day")
             //                    .font(.footnote)
             //                    .foregroundStyle(.gray)
-            //            }334
+            //            }
             
             if addVm.hasGoalSet {
                 HStack(spacing: 14) {
@@ -231,7 +231,7 @@ extension AddNewHabitView {
                     //                    Text(.now, style: .time)
                     //                        .padding()
                     //                        .background(Color("bgColor"), in: RoundedRectangle(cornerRadius: 12))
-                    //
+
                     TextField("Remainder Text", text: $addVm.remainderText)
                         .padding()
                         .background(Color("bgColor"), in: RoundedRectangle(cornerRadius: 12))
@@ -251,8 +251,7 @@ extension AddNewHabitView {
             DatePicker(selection: $addVm.startDate, displayedComponents: .date) {
                 Text("Start date")
             }
-            // .datePickerStyle(GraphicalDatePickerStyle())
-            
+ 
             Toggle(isOn: $addVm.hasEndDateEnabled) {
                 Text("End date")
                     .bold()

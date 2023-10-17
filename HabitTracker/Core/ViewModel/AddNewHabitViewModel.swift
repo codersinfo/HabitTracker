@@ -37,7 +37,7 @@ class AddNewHabitViewModel {
         "\(hours ?? "0"):\(mins ?? "0")"
     }
     private var habit: HabitEntity
-    private var weekDays: WeekDayEntity? = nil
+   // private var weekDays: WeekDayEntity? = nil
     
     private let context: NSManagedObjectContext
     private let calendar = Calendar.current
@@ -45,7 +45,7 @@ class AddNewHabitViewModel {
     init(context: PersistenceController, habit: HabitEntity? = nil) {
         self.context = context.newViewContext
         self.habit = HabitEntity(context: self.context)
-        self.weekDays = WeekDayEntity(context: self.context)
+       // self.weekDays = WeekDayEntity(context: self.context)
     }
     
     //    func save() async throws {
@@ -114,6 +114,7 @@ class AddNewHabitViewModel {
                 if hours == "0" && mins == "0" {
                    
                 } else {
+                    print(goalTime)
                     habit.goal = goalTime
                 }
             } else {
@@ -123,14 +124,6 @@ class AddNewHabitViewModel {
             }
             
             habit.goalPeriod = goalPeriod.rawValue
-            
-            // if !goal.isEmpty && !goalPeriod.isEmpty {
-            //  habit.goal = goal
-            //  habit.goalPeriod = goalPeriod
-            //  } else {
-            //Set default values
-                // habit.goal = goal
-            // }
         } else {
             //Set default values
             habit.goal = goal

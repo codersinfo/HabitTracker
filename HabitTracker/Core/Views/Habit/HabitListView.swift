@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HabitListView: View {
     @State var showAddNewHabitView: Bool = false
-   // @FetchRequest(fetchRequest: HabitEntity.all()) private var habits
+    // @FetchRequest(fetchRequest: HabitEntity.all()) private var habits
     @State var listVm = HabitListViewModel()
     @Namespace var weeklyViewNameSpace
     
@@ -45,36 +45,35 @@ struct HabitListView: View {
                     }
                 }
                 
-                FilteredHabitsView(dateToFilter: listVm.currentDate)
+                FilteredHabitsView(dateToFilter: listVm.currentDate, providerContext: provider)
                 
-//                ScrollView {
-//                    VStack(spacing: 14) {
-//                        ForEach(habits) { habit in
-//                            VStack {
-//    //                            Text("\(habit.id)")
-//    //                            HStack {
-//    //                                Text(habit.name)
-//    //                                Spacer()
-//    //                                Capsule()
-//    //                                    .fill(Color(habit.color))
-//    //                                    .frame(width: 70, height: 50)
-//    //                            }
-//                                
-//                                ProgressBar(text: habit.name, value: .constant(0.4), color: Color(habit.color))
-//                                    .frame(height: 60)
-//                                
-//                                //                        HStack {
-//                                //                            ForEach(habit.weekdayArray) { weekDay in
-//                                //                                Text(weekDay.day ?? "")
-//                                //                            }
-//                                //                        }
-//                                
-//
-//                            }
-//                        }
-//                    }
-//                }
-                
+                //                ScrollView {
+                //                    VStack(spacing: 14) {
+                //                        ForEach(habits) { habit in
+                //                            VStack {
+                //    //                            Text("\(habit.id)")
+                //    //                            HStack {
+                //    //                                Text(habit.name)
+                //    //                                Spacer()
+                //    //                                Capsule()
+                //    //                                    .fill(Color(habit.color))
+                //    //                                    .frame(width: 70, height: 50)
+                //    //                            }
+                //
+                //                                ProgressBar(text: habit.name, value: .constant(0.4), color: Color(habit.color))
+                //                                    .frame(height: 60)
+                //
+                //                                //                        HStack {
+                //                                //                            ForEach(habit.weekdayArray) { weekDay in
+                //                                //                                Text(weekDay.day ?? "")
+                //                                //                            }
+                //                                //                        }
+                //
+                //
+                //                            }
+                //                        }
+                //                    }
+                //                }
                 //            .onAppear {
                 //                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 //                    print(habits)

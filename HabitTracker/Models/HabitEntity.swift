@@ -26,8 +26,11 @@ final class HabitEntity: NSManagedObject, Identifiable {
     @NSManaged var remainderText: String?
     @NSManaged var notificationTime: Date?
     @NSManaged var isCompleted: Bool
-    @NSManaged var weekDays: NSSet?
     @NSManaged var createdAt: Date
+    
+    @NSManaged var weekDays: NSSet?
+    @NSManaged var habitRecords: NSSet?
+   
     //@NSManaged var updatedAt: Date
     
     override func awakeFromInsert() {
@@ -61,6 +64,7 @@ extension HabitEntity {
     static func getHabitDate(for targetDate: Date) -> NSFetchRequest<HabitEntity> {
         let request: NSFetchRequest<HabitEntity> = habitsFetchRequest
         request.relationshipKeyPathsForPrefetching = ["weekDays"]
+        //request.relationshipKeyPathsForPrefetching = ["habitRecords"]
         request.sortDescriptors = []
         
         let calendar = Calendar.current
@@ -92,6 +96,54 @@ extension HabitEntity {
         frequency == [c] %@ AND ANY weekDays.day == [c] %@ AND (
         (startDate >= %@ AND startDate < %@) OR
         (startDate <= %@ AND endDate >= %@) OR 
+        (startDate != nil AND endDate == nil))
+        """
+        
+        //MARK: predicates
+        let dailyPredicate = NSPredicate(format: dailyQuery, argumentArray: ["Daily", startOfDay as NSDate, endOfDay as NSDate, targetDate as NSDate, targetDate as NSDate, targetDate as NSDate])
+        
+        let weeklyPredicate = NSPredicate(format: weeklyDataQuery, argumentArray: ["Weekly", weekDay, startOfDay as NSDate, endOfDay as NSDate, targetDate as NSDate, targetDate as NSDate])
+        
+        request.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [dailyPredicate, weeklyPredicate])
+        return request
+    }
+    
+    
+    static func getHabitDate2(for targetDate: Date) -> NSFetchRequest<HabitEntity> {
+        let request: NSFetchRequest<HabitEntity> = habitsFetchRequest
+        request.relationshipKeyPathsForPrefetching = ["weekDays"]
+        request.relationshipKeyPathsForPrefetching = ["habitRecords"]
+        request.sortDescriptors = []
+        
+            let calendar = Calendar.current
+            let startOfDay = calendar.startOfDay(for: targetDate)
+        let endOfDay = calendar.date(bySettingHour: 23, minute: 59, second: 59, of: targetDate)!
+        print("startOfDay - \(startOfDay)\nendOfDay - \(targetDate)")
+        print("filterDate - \(targetDate) \n")
+        
+        let weekDay = targetDate.getDay(format: "EEEE")
+        print(weekDay)
+        
+        //MARK: Daily data Query
+        ///Frequency must be Daily.
+        ///Showing data based on selected Date if data is there.
+        ///Showing already exist data with no end date but Start date should be not NULL.
+        ///Showing already exist data till selected date less than End date.
+        let dailyQuery = """
+        frequency == [c] %@ AND (
+        (startDate >= %@ AND startDate < %@) OR
+        (startDate <= %@ AND (startDate != nil AND endDate == nil)) OR
+        (endDate != nil AND startDate <= %@ AND endDate >= %@))
+        """
+        
+        //MARK: Weekly data Query
+        ///Frequency must be Weekly.
+        ///Start date should be greater than or equal given date.
+        ///End date can be less than or equal given date OR can be null too.
+        let weeklyDataQuery = """
+        frequency == [c] %@ AND ANY weekDays.day == [c] %@ AND (
+        (startDate >= %@ AND startDate < %@) OR
+        (startDate <= %@ AND endDate >= %@) OR
         (startDate != nil AND endDate == nil))
         """
         
