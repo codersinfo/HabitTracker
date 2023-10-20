@@ -19,25 +19,37 @@ struct Timing {
     var totalTimeInHours: Int
     var totalTimeInSeconds: Int
     
-    init(hours totalTimeInHours: Int, mins totalTimeInMinutes: Int) {
+    init(hours totalTimeInHours: Int, mins totalTimeInMinutes: Int, seconds: Int) {
         self.totalTimeInHours = 0
         self.totalTimeInMinutes = 0
-        self.totalTimeInSeconds = totalTimeInHours * 3600 + totalTimeInMinutes * 60
+        self.totalTimeInSeconds = (totalTimeInHours * 3600 + totalTimeInMinutes * 60) + seconds
     }
 }
 
 struct PomodoroTimerView: View {
-    var timing: Timing
+    var totalTiming: Timing
+    var recordTiming: Timing
     @State private var remainingTimeInSeconds: Int = 0
     @State private var timer: Timer?
     @State private var timeString: String = "00:00:00"
+    @State private var completionString: String = "00:00:00"
     @State private var isTimerRunning: Bool = false
-    @State private var progress: Double = 0
+    @State var progress: Double = 1
     private var notificationIdentifier: String = UUID().uuidString
+    var completion: (String, String?) -> Void
     
-    init(timing: Timing) {
-        self.timing = timing
-    }
+//    init(timing: Timing, progress: Binding<Double>, completion: @escaping (String, String?) -> Void) {
+//        self.timing = timing
+//        self._progress = progress
+//        self.completion = completion
+//    }
+    
+    init(totalTiming: Timing, recordTiming: Timing, completion: @escaping (String, String?) -> Void) {
+        self.totalTiming = totalTiming
+        self.recordTiming = recordTiming
+        //self._progress = progress
+        self.completion = completion
+   }
     
     var body: some View {
         VStack {
@@ -93,16 +105,25 @@ struct PomodoroTimerView: View {
                 Spacer()
             }
         }
+        .onChange(of: remainingTimeInSeconds, {
+            completion(completionString, nil)
+        })
         .onAppear {
             withAnimation(.easeInOut(duration: 0.5)) {
-                progress = 1
+                progress = CGFloat(recordTiming.totalTimeInSeconds) / CGFloat(totalTiming.totalTimeInSeconds)
             }
             defaultTimer()
         }
+        .onDisappear(perform: {
+            print("OnDisapper just hit")
+            isTimerRunning = false
+            timer?.invalidate()
+            timer = nil
+        })
     }
     
     private func defaultTimer() {
-        remainingTimeInSeconds = timing.totalTimeInSeconds
+        remainingTimeInSeconds = recordTiming.totalTimeInSeconds
         formattedTime()
     }
     
@@ -114,8 +135,14 @@ struct PomodoroTimerView: View {
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
                 if remainingTimeInSeconds > 0 {
                     remainingTimeInSeconds -= 1
-                    progress = CGFloat(remainingTimeInSeconds) / CGFloat(timing.totalTimeInSeconds)
+                    progress = CGFloat(remainingTimeInSeconds) / CGFloat(totalTiming.totalTimeInSeconds)
+                    print(progress)
                     formattedTime()
+                } else if remainingTimeInSeconds == 0 {
+                    completion(completionString, "Finished")
+                    isTimerRunning = false
+                    timer?.invalidate()
+                    timer = nil
                 } else {
                     resetTimer()
                 }
@@ -124,6 +151,7 @@ struct PomodoroTimerView: View {
     }
     
     private func pauseTimer() {
+        completion(completionString, "Paused")
         isTimerRunning = false
         timer?.invalidate()
         timer = nil
@@ -135,7 +163,10 @@ struct PomodoroTimerView: View {
             timer?.invalidate()
             timer = nil
             progress = 1.0
-            defaultTimer()
+            //defaultTimer()
+            remainingTimeInSeconds = totalTiming.totalTimeInSeconds
+            formattedTime()
+            completion(completionString, "Reset")
         }
     }
     
@@ -144,10 +175,10 @@ struct PomodoroTimerView: View {
         let hrs = remainingTimeInSeconds / 3600
         let mins = (remainingTimeInSeconds / 60) % 60
         let seconds = remainingTimeInSeconds % 60
-        print(String(format: "%02i:%02i:%02i", hrs, mins, seconds))
-        
+        // print(String(format: "%02i:%02i:%02i", hrs, mins, seconds))
         timeString = hrs > 0 ? String(format: "%02i:%02i:%02i", hrs, mins, seconds) : String(format: "%02i:%02i", mins, seconds)
-        print(timeString)
+        completionString = String(format: "%02i:%02i:%02i", hrs, mins, seconds)
+        //  print(timeString)
     }
     
     //MARK: Schedule notification
@@ -167,9 +198,11 @@ struct PomodoroTimerView: View {
 }
 
 #Preview {
-    PomodoroTimerView(timing: .init(hours: 1, mins: 30))
+    PomodoroTimerView(totalTiming: .init(hours: 0, mins: 1, seconds: 0), recordTiming: .init(hours: 0, mins: 0, seconds: 55)) { newValue, state in
+        print("\(newValue), \(String(describing: state))")
+    }
+    // PomodoroTimerView(timing: .init(hours: 1, mins: 30), progress: .constant(0), completion: () -> (String))
 }
-
 
 //            ZStack {
 //                Circle()

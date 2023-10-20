@@ -82,7 +82,8 @@ struct AddNewHabitView: View {
 #Preview {
     NavigationStack {
         let preview = PersistenceController.shared
-        AddNewHabitView(addVm: .init(context: preview))
+        AddNewHabitView(addVm: .init(provider: preview))
+        //AddNewHabitView(addVm: .init(context: preview))
             .environment(\.managedObjectContext, preview.viewContext)
     }
 }

@@ -9,59 +9,119 @@ import SwiftUI
 import CoreData
 
 struct HabitDetailView: View {
-//    private var goalType: GoalUnitType
-//    private var value: String
-    
-//    init(goalType: GoalUnitType = .count, value: String) {
-//        self.goalType = goalType
-//        self.value = value
-//    }
-    
-//    private let context: NSManagedObjectContext
-//    private var habit: HabitEntity
-    //var provider: PersistenceController
+    @Environment(\.dismiss) var dismiss
+    @State var isPresented: Bool = false
     @State var habitRecordVm: HabitDetailViewModel
+    var context: PersistenceController
     
-    init(habit: HabitEntity, selectedDate: Date, context: PersistenceController) {
-//        self.context = context.viewContext
-//        self.habit = HabitEntity(context: self.context)
-        _habitRecordVm = .init(initialValue: HabitDetailViewModel(context: context, selectedDate: selectedDate, habit: habit))
+    init(habit: HabitEntity, selectedDate: Date, context: PersistenceController, habitRecord: HabitRecord?) {
+        print("DEBUG: Habit Detail Init")
+        self.context = context
+        _habitRecordVm = .init(initialValue: HabitDetailViewModel(provider: context, selectedDate: selectedDate, habit: habit, habitRecord: habitRecord))
     }
-
+    
     var body: some View {
         VStack {
             Text(habitRecordVm.habitRecord?.progress ?? "Progress unknown")
             ZStack {
                 switch habitRecordVm.goalType {
                 case .hoursMins:
-                    if let gethoursAndTime = getTime(for: habitRecordVm.value) {
-                        PomodoroTimerView(timing: .init(hours: Int(gethoursAndTime[0]) ?? 0, mins: Int(gethoursAndTime[1]) ?? 0))
-                    }
+                    hourMinsView
                 default:
-                    CircularStepperView(totalCount: Int(habitRecordVm.value) ?? 0)
+                    countView
                 }
             }
+            
+            Button {
+                do {
+                    try habitRecordVm.update()
+                    dismiss()
+                    print("DEBUG: On Dispear")
+                } catch {
+                    print("Error \(error)")
+                }
+                
+//                Task(priority: .background) {
+//                    try await context.perform {
+//                        try context.save()
+//                        dismiss()
+//                    }
+//                }
+            } label: {
+                Text("back")
+            }
+
         }
+        .sheet(isPresented: $isPresented, content: {
+            NavigationStack {
+                AddNewHabitView(addVm: .init(provider: context, habit: habitRecordVm.habit))
+            }
+        })
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    Button {
+                        isPresented.toggle()
+                    } label: {
+                        Text("Edit")
+                    }
+                    
+                    Button(role: .destructive) {
+                        do {
+                            try habitRecordVm.deleteHabit()
+                            dismiss()
+                        } catch {
+                            print("\(error)")
+                        }
+                        
+                    } label: {
+                        Text("Delete")
+                    }
+
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
+        })
         .padding()
-    }
-    
-    private func getTime(for value: String) -> [String]? {
-        if !value.isEmpty {
-            let splitedValue = value.components(separatedBy: ":")
-            print("\(splitedValue)")
-            return splitedValue
-        }
-        
-        return nil
-    }
-}
+    }}
 
 
 #Preview {
     Group {
         let preview = PersistenceController.shared
-        HabitDetailView(habit: .preview(context: preview.viewContext), selectedDate: .now, context: preview)
+        NavigationStack {
+            HabitDetailView(habit: .previewWithCount(context: preview.viewContext), selectedDate: .now, context: preview, habitRecord: nil)
+        }
     }
-   // HabitDetailView(goalType: .hoursMins, value: "00:02")
+}
+
+extension HabitDetailView {
+    var hourMinsView: some View {
+        ZStack {
+            if let duration = habitRecordVm.totalRecordingTiming {
+                PomodoroTimerView(totalTiming: duration, 
+                                  recordTiming: habitRecordVm.habitRecordtiming!) { timeString, state in
+                    print("\(timeString), \(String(describing: state))")
+                    if let state {
+                        print("\(state)")
+                       let _ = habitRecordVm.preloadHabitDataIfNeeded(progress: timeString, isFinished: false)
+                    }
+                }
+            }
+        }
+    }
     
+    var countView: some View {
+        ZStack {
+            CircularStepperView(totalCount: Int(habitRecordVm.goalCount) ?? 0,
+                                recordCount: Int(habitRecordVm.recordCount) ?? 0) { remainingCount, state in
+                print("\(remainingCount), \(String(describing: state))")
+                if let state {
+                    print("\(state)")
+                    let _ = habitRecordVm.preloadHabitDataIfNeeded(progress: String(remainingCount), isFinished: false)
+                }
+            }
+        }
+    }
 }

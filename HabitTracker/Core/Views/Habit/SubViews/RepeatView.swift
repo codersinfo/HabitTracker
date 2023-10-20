@@ -38,5 +38,5 @@ struct RepeatView: View {
 }
 
 #Preview {
-    RepeatView(addvm: .init(context: .shared))
+    RepeatView(addvm: .init(provider: .shared))
 }

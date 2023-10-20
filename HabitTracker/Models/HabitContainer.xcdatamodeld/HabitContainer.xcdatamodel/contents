@@ -17,8 +17,8 @@
         <attribute name="remainderText" optional="YES" attributeType="String"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="timeRange" optional="YES" attributeType="String"/>
-        <relationship name="habitRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HabitRecord" inverseName="habit" inverseEntity="HabitRecord"/>
-        <relationship name="weekDays" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeekDayEntity" inverseName="habit" inverseEntity="WeekDayEntity"/>
+        <relationship name="habitRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="HabitRecord" inverseName="habit" inverseEntity="HabitRecord"/>
+        <relationship name="weekDays" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WeekDayEntity" inverseName="habit" inverseEntity="WeekDayEntity"/>
     </entity>
     <entity name="HabitRecord" representedClassName=".HabitRecord" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>

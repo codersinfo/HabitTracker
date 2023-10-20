@@ -36,5 +36,5 @@ struct RemainderView: View {
 }
 
 #Preview {
-    RemainderView(addvm: .init(context: .shared))
+    RemainderView(addvm: .init(provider: .shared))
 }

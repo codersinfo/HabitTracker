@@ -63,7 +63,7 @@ extension HabitEntity {
 
     static func getHabitDate(for targetDate: Date) -> NSFetchRequest<HabitEntity> {
         let request: NSFetchRequest<HabitEntity> = habitsFetchRequest
-        request.relationshipKeyPathsForPrefetching = ["weekDays"]
+        request.relationshipKeyPathsForPrefetching = ["weekDays", "habitRecords"]
         //request.relationshipKeyPathsForPrefetching = ["habitRecords"]
         request.sortDescriptors = []
         
@@ -167,8 +167,12 @@ extension HabitEntity {
         return habits
     }
     
-    static func preview(context: NSManagedObjectContext = PersistenceController.shared.viewContext) -> HabitEntity {
-        return makePreview(count: 1, in: context).first!
+    static func previewWithCount(context: NSManagedObjectContext = PersistenceController.shared.viewContext) -> HabitEntity {
+        return makePreview(count: 1, in: context)[2]
+    }
+    
+    static func previewWithTime(context: NSManagedObjectContext = PersistenceController.shared.viewContext) -> HabitEntity {
+        return makePreview(count: 1, in: context)[3]
     }
     
     static func empty(context: NSManagedObjectContext = PersistenceController.shared.viewContext) -> HabitEntity {
@@ -235,7 +239,7 @@ extension HabitEntity {
         habit5.note = "reading is good for concenrations"
         habit5.icon = ""
         habit5.color = "card-5"
-        habit5.goal = "01:30"
+        habit5.goal = "1:1:0"
         habit5.goalPeriod = "hoursMins"
         habit5.frequency = "Daily"
         habit5.timeRange = "Anytime"

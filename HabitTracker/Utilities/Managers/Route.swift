@@ -9,18 +9,14 @@ import Foundation
 import SwiftUI
 
 enum Route: Hashable, View {
-    case detail(HabitEntity, Date, PersistenceController)
+    case detail(HabitEntity, Date, PersistenceController, HabitRecord?)
     //    case list
     //    case add
     
     var body: some View {
         switch self {
-        case .detail(let habit, let date, let context):
-            HabitDetailView(habit: habit, selectedDate: date, context: context)
-            //        case .list:
-            //            <#code#>
-            //        case .add:
-            //            <#code#>
+        case .detail(let habit, let date, let provider, let record):
+            HabitDetailView(habit: habit, selectedDate: date, context: provider, habitRecord: record)
         }
     }
     

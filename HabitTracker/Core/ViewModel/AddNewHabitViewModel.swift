@@ -32,67 +32,56 @@ class AddNewHabitViewModel {
     var endDate: Date = Date()
     var hours: String?
     var mins: String?
-    
+    var isNew: Bool
     private var goalTime: String {
-        "\(hours ?? "0"):\(mins ?? "0")"
+        "\(hours ?? "0"):\(mins ?? "0"):0"
     }
     private var habit: HabitEntity
-   // private var weekDays: WeekDayEntity? = nil
+    // private var weekDays: WeekDayEntity? = nil
     
     private let context: NSManagedObjectContext
     private let calendar = Calendar.current
     
-    init(context: PersistenceController, habit: HabitEntity? = nil) {
-        self.context = context.newViewContext
-        self.habit = HabitEntity(context: self.context)
-       // self.weekDays = WeekDayEntity(context: self.context)
-    }
-    
-    //    func save() async throws {
-    //        habit.name = name
-    //        habit.color = color
-    //        habit.note = note
-    //        habit.icon = icon
-    //        habit.timeRange = timeRange.rawValue
-    //        habit.frequency = frequency.rawValue.capitalized
-    //        habit.startDate = .now
-    //
-    //        if hasGoalSet {
-    //            if !goal.isEmpty {
-    //                habit.goal = goal
-    //                habit.goalPeriod = goalPeriod
-    //            } else {
-    //                //Show error alert
-    //            }
-    //        }
-    //
-    //        if remainderOn {
-    //            if !remainderText.isEmpty {
-    //                habit.isRemainderOn = remainderOn
-    //                habit.remainderText = remainderText
-    //                habit.notificationTime = remainderDate
-    //
-    //                if frequency == .weekly {
-    //                    if let weekEntities = try? await scheduleNotificationWeekday() {
-    //                        //habit.weekDays = weekDays
-    //                        //habit.weekDays?.addingObjects(from: weekEntities)
-    //                        habit.weekDays = Set(weekEntities) as NSSet
-    //                    }
-    //                } else if frequency == .monthly {
-    //
-    //                } else {
-    //                    try await scheduleNotificationForDailyWithoutEndDate()
-    //                }
-    //            }
-    //        }
-    //
-    //        print(habit)
-    //
-    //        if context.hasChanges {
-    //            try context.save()
-    //        }
+    //    init(context: PersistenceController, habit: HabitEntity? = nil) {
+    //        self.context = context.newViewContext
+    //        self.habit = HabitEntity(context: self.context)
+    //       // self.weekDays = WeekDayEntity(context: self.context)
     //    }
     
+    init(provider: PersistenceController, habit: HabitEntity? = nil) {
+        self.context = provider.newViewContext
+        if let habit, let existingHabit = try? context.existingObject(with: habit.objectID) as? HabitEntity {
+            self.habit = existingHabit
+            self.isNew = false
+            setHbaitData()
+        } else {
+            self.habit = HabitEntity(context: self.context)
+            self.isNew = true
+        }
+        // self.weekDays = WeekDayEntity(context: self.context)
+    }
+    
+    func setHbaitData() {
+        self.name = habit.name
+        self.note = habit.note ?? ""
+        self.icon = habit.icon
+        self.color = habit.color
+        self.goal = habit.goal ?? ""
+        self.goalPeriod = GoalUnitType(rawValue: habit.goalPeriod ?? "") ?? .count
+        self.timeRange = .anytime
+        self.frequency = .daily
+        //isRepeat = false
+       // savedWeekDays = ["Sunday"]
+        self.remainderOn = false
+        self.remainderText = habit.remainderText ?? ""
+        self.remainderDate = habit.notificationTime ?? .now
+        self.startDate = habit.startDate
+        //hasEndDateEnabled = false
+        //endDate = Date()
+        //    hours
+        //    mins
+    }
+
     func save() throws {
         if context.hasChanges {
             try context.save()
@@ -112,7 +101,7 @@ class AddNewHabitViewModel {
         if hasGoalSet {
             if goalPeriod == .hoursMins {
                 if hours == "0" && mins == "0" {
-                   
+                    
                 } else {
                     print(goalTime)
                     habit.goal = goalTime
@@ -122,7 +111,6 @@ class AddNewHabitViewModel {
                     habit.goal = goal
                 }
             }
-            
             habit.goalPeriod = goalPeriod.rawValue
         } else {
             //Set default values

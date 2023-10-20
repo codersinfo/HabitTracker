@@ -8,6 +8,9 @@
 import Foundation
 import Observation
 
+//@Observable
 //class HabitRecordViewModel {
+//    var habitRecord: HabitRecord
+//    
 //    
 //}

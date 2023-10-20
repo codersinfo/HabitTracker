@@ -9,8 +9,9 @@ import SwiftUI
 
 struct RoundedRectProgressBar: View {
     var text: String = "Habit name"
-    @Binding var value: Float
+    @State private var value: Double = 0
     var color: Color = .green
+    var progress: Double = 0
     
     var body: some View {
         GeometryReader { geo in
@@ -35,11 +36,14 @@ struct RoundedRectProgressBar: View {
             .padding(.horizontal)
             .frame(height: geo.size.height, alignment: .center)
         }
+        .onAppear(perform: {
+            value = progress
+        })
     }
 }
 
 #Preview {
-    RoundedRectProgressBar(value: .constant(2/10))
+    RoundedRectProgressBar(progress: 2/10)
         .frame(height: 60)
         .padding()
 }

@@ -81,5 +81,5 @@ struct FrequencyView: View {
 
 
 #Preview {
-    FrequencyView(addvm: .init(context: .shared))
+    FrequencyView(addvm: .init(provider: .shared))
 }

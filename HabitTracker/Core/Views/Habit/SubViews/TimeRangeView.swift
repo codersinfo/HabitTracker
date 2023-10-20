@@ -44,5 +44,5 @@ struct TimeRangeView: View {
 }
 
 #Preview {
-    TimeRangeView(addvm: .init(context: .shared))
+    TimeRangeView(addvm: .init(provider: .shared))
 }
