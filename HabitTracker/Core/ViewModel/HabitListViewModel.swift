@@ -19,7 +19,7 @@ final class HabitListViewModel {
     
     func getCurrentWeek() {
         var calendar = Calendar.current
-        //Week day starts with 1 - sunday ...
+        //Week day starts with 1 - sunday...
         calendar.firstWeekday = 1
         let today = calendar.startOfDay(for: Date())
         

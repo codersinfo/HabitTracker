@@ -33,9 +33,10 @@ class HabitDetailViewModel {
         if let habitRecord, let existingHabitRecord = try? self.context.existingObject(with: habitRecord.objectID) as? HabitRecord {
             self.habitRecord = existingHabitRecord
         } else {
+            //Creating new habit record.
             self.habitRecord = HabitRecord(context: context)
+            self.getHabitRecord(with: self.selectedDate, for: self.habit)
         }
-        
         
 //        if let existingHabit = try? self.context.existingObject(with: habit.objectID) as? HabitEntity {
 //            self.habit = existingHabit
@@ -54,7 +55,7 @@ class HabitDetailViewModel {
 //            self.habit = habit
 //        }
         
-        self.getHabitRecord(with: self.selectedDate, for: self.habit)
+        
         getProgress()
     }
     
@@ -108,14 +109,14 @@ class HabitDetailViewModel {
         print("Deleted Successfully")
     }
     
-    func update() throws {
-        //let existingHabit = try context.existingObject(with: habit.objectID) as? HabitRecord
-       // existingHabit?.progress = "332"
-        habitRecord?.progress = "332"
-        habit.habitRecords?.adding(habitRecord!)
-        //habit.habitRecords?.adding(existingHabit!)
-        try context.save()
-    }
+//    func update() throws {
+//        //let existingHabit = try context.existingObject(with: habit.objectID) as? HabitRecord
+//       // existingHabit?.progress = "332"
+//        habitRecord?.progress = "332"
+//        habit.habitRecords?.adding(habitRecord!)
+//        //habit.habitRecords?.adding(existingHabit!)
+//        try context.save()
+//    }
     
     func getDuration(value: String) -> Timing? {
         if let gethoursAndTime = getSplitedTime(for: value) {
@@ -153,8 +154,8 @@ extension HabitDetailViewModel {
         }
     }
     
-    private func loadHabitRecord(habit: HabitEntity, date: Date) {
-        guard let habitData = fetchHabitRecord(habit: self.habit, selectedDate: date) else { return }
+//    private func loadHabitRecord(habit: HabitEntity, date: Date) {
+//        guard let habitData = fetchHabitRecord(habit: self.habit, selectedDate: date) else { return }
         // self.habitRecord = habitData
         
         
@@ -167,7 +168,7 @@ extension HabitDetailViewModel {
         //                //self.value = habit.goal ?? "0"
         //            }
         //        }
-    }
+   // }
     
     private func fetchHabitRecord(habit: HabitEntity, selectedDate: Date) -> HabitRecord? {
         let request = HabitRecord.getHabitRecordForDate(date: selectedDate, habit: habit)

@@ -357,8 +357,8 @@
             filePath = "HabitTracker/Core/ViewModel/HabitDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "getDuration(value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -580,8 +580,8 @@
             filePath = "HabitTracker/Core/ViewModel/HabitDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "preloadHabitDataIfNeeded(progress:isFinished:)"
             landmarkType = "7">
             <Locations>
@@ -659,8 +659,8 @@
             filePath = "HabitTracker/Core/ViewModel/HabitDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "init(provider:selectedDate:habit:habitRecord:)"
             landmarkType = "7">
             <Locations>
@@ -707,8 +707,8 @@
             filePath = "HabitTracker/Core/ViewModel/HabitDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "init(provider:selectedDate:habit:habitRecord:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -723,8 +723,8 @@
             filePath = "HabitTracker/Core/ViewModel/HabitDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "init(provider:selectedDate:habit:habitRecord:)"
             landmarkType = "7">
             <Locations>

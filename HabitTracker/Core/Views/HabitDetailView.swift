@@ -33,13 +33,13 @@ struct HabitDetailView: View {
             }
             
             Button {
-                do {
-                    try habitRecordVm.update()
+                //do {
+                    //try habitRecordVm.update()
                     dismiss()
-                    print("DEBUG: On Dispear")
-                } catch {
-                    print("Error \(error)")
-                }
+//                    print("DEBUG: On Dispear")
+//                } catch {
+//                    print("Error \(error)")
+//                }
                 
 //                Task(priority: .background) {
 //                    try await context.perform {
